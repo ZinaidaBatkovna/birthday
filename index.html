@@ -5,37 +5,59 @@
   <title>🎉 Никита, с Днём Рождения!</title>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
-    body      {font-family: Arial, sans-serif; text-align:center; margin:0; padding:4rem; background:#faf9ff;}
-    h1        {margin-bottom:2rem;}
-    #btn      {
-                padding:1rem 2rem; font-size:1.1rem; border:none; border-radius:8px;
-                background:#6f4cff; color:#fff; cursor:pointer; position:relative;
-                animation:pulse 2s infinite;
-              }
-    #btn:active{transform:scale(0.96);}
-    @keyframes pulse{
-        0%   {box-shadow:0 0 0 0 rgba(111,76,255,0.7);}
-        70%  {box-shadow:0 0 0 15px rgba(111,76,255,0);}
-        100% {box-shadow:0 0 0 0 rgba(111,76,255,0);}
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 4rem;
+      background: #faf9ff;
     }
-    #output  {
-                max-width:600px; margin:2rem auto 0; padding:1.5rem;
-                background:#272822; color:#e6e6e6; border-radius:8px; text-align:left;
-                font-family:Consolas,Monaco,monospace; font-size:0.9rem;
-                white-space:pre-wrap; opacity:0; transform:translateY(20px);
-                transition:opacity .8s ease, transform .8s ease;
-              }
-    #output.show{opacity:1; transform:translateY(0);}
+    h1 { margin-bottom: 2rem; }
+    #btn {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      background: #6f4cff;
+      color: #fff;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+    }
+    #btn:active { transform: scale(0.96); }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(111,76,255,0.7); }
+      70%  { box-shadow: 0 0 0 15px rgba(111,76,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(111,76,255,0); }
+    }
+    #output {
+      max-width: 600px;
+      margin: 2rem auto 0;
+      padding: 1.5rem;
+      background: #272822;
+      color: #e6e6e6;
+      border-radius: 8px;
+      text-align: left;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    #output.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
   <h1>🎂 Сюрприз для Никиты</h1>
   <button id="btn">Показать поздравление</button>
-  <pre id="output">// жми кнопку, не стесняйся 😉</pre>
+  <pre id="output">// жми кнопку 😉</pre>
 
   <script>
-    const btn = document.getElementById('btn');
-    const output = document.getElementById('output');
+    const btn = document.getElementById("btn");
+    const output = document.getElementById("output");
 
     const data = {
       to: "Никита",
@@ -45,9 +67,9 @@
     };
 
     btn.onclick = () => {
-      confetti({particleCount:150, spread:70, origin:{y:0.5}});
+      confetti({ particleCount: 150, spread: 70, origin: { y: 0.5 } });
       output.textContent = JSON.stringify(data, null, 2);
-      output.classList.add('show');
+      output.classList.add("show");
     };
 
 <!-- 11010001 10000010 11010001 10001011 
