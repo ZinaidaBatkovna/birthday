@@ -56,15 +56,22 @@
   <pre id="output">// жми кнопку 😉</pre>
 
   <script>
-    const btn = document.getElementById("btn");
-    const output = document.getElementById("output");
+  const btn = document.getElementById("btn");
+  const output = document.getElementById("output");
 
-    const data = {
-      to: "Никита",
-      message: "С днём рождения! Пусть все твои запросы к жизни возвращают 200 OK, а баг-репорты автоматически резолвятся.",
-      perks: ["+10 к производительности", "бесконечная мотивация", "0 критических багов"],
-      date: new Date().toISOString().slice(0, 10)
-    };
+  const data = {
+    to: "Никита",
+    message: "С днём рождения! Пусть все твои запросы к жизни возвращают 200 OK, а баг-репорты автоматически резолвятся.",
+    perks: ["+10 к производительности", "бесконечная мотивация", "0 критических багов"],
+    date: new Date().toISOString().slice(0, 10)
+  };
+
+  btn.onclick = () => {
+    confetti({ particleCount: 150, spread: 70, origin: { y: 0.5 } });
+    output.textContent = JSON.stringify(data, null, 2);
+    output.classList.add("show");
+  };
+</script>
 
     btn.onclick = () => {
       confetti({ particleCount: 150, spread: 70, origin: { y: 0.5 } });
